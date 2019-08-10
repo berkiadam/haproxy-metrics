@@ -8,7 +8,7 @@ grok:
     patterns_dir: ./patterns
 metrics:
     - type: histogram
-      name: haproxy_http_request_duration_seconds_bucket
+      name: haproxy_http_request_duration_seconds
       help: The request duration of the applications running in openshift that have route defined.
       match: '%{SYSLOGTIMESTAMP:timestamp} %{DATA:Aloha_name} %{DATA:haproxy_process}: %{DATA:client_ip}:%{INT:client_port} \[%{HAPROXYDATE:accept_date}\] %{DATA:frontend_name} %{DATA}:%{DATA:namespace}:%{DATA:service}/pod:%{DATA:pod_name}:%{DATA} %{INT:Tq}/%{INT:Tw}/%{INT:Tc}/%{INT:Tr}/%{INT:Tt} %{INT:http_status_code} %{NOTSPACE:bytes_read} %{DATA} %{DATA} %{DATA} %{INT:actconn}/%{INT:feconn}/%{INT:beconn}/%{INT:srvconn}/%{NOTSPACE:retries} %{INT:srv_queue}/%{INT:backend_queue} "%{WORD:Method} %{URIPATHPARAM:request} HTTP/%{NUMBER:http_version}"'
       value: "{{divide .Tt 1000}}"

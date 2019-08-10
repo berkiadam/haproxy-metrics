@@ -39,6 +39,7 @@ spec:
               name: log-dir
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
+      serviceAccountName: haproxy-exporter
       volumes:
         - name: config-volume    
           configMap:

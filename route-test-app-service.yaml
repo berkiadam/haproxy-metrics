@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    run: test-app
+  name: test-app
+  namespace: mynamespace
+spec:
+  host: test-app-service-mynamespace.192.168.42.185.nip.io
+  tls:
+    insecureEdgeTerminationPolicy: Allow
+    termination: edge
+  to:
+    kind: Service
+    name: test-app
+    weight: 100
+  wildcardPolicy: None
+

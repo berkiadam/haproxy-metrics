@@ -25,7 +25,6 @@ RUN ln -sf /etc/grok_exporter/config.yml /grok/
 
 RUN apt-get update
 RUN apt-get -y install rsyslog
-RUN systemctl enable rsyslog
 ADD ./rsyslog.conf /etc/rsyslog.conf
 
 
@@ -33,4 +32,3 @@ EXPOSE 514/tcp 514/udp 9144/tcp
 WORKDIR /grok
 
 CMD service rsyslog start && ./grok_exporter -config /grok/config.yml
-#CMD /usr/sbin/rsyslogd -n -i /tmp/rsyslog.pid && ./grok_exporter -config /grok/config.yml
