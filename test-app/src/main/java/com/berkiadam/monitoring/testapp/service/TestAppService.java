@@ -4,10 +4,7 @@ package com.otp.dsp.testapp.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -46,8 +43,10 @@ public class TestAppService {
 
     @GET
     @Path("slowresponse/{delay}/{code}")
-    public Response getSlowResponseWithHttpCode(@PathParam("delay") Long delay, @PathParam("code") int httpCode) {
+    public Response getSlowResponseWithHttpCode(@PathParam("delay") Long delay, @PathParam("code") int httpCode, @QueryParam("ingress") String  ingressName) {
 
+
+        logger.info("ingress name: " + ingressName);
 
         String responseBody = null;
 
@@ -100,6 +99,7 @@ public class TestAppService {
 
 
     }
+
 
 
 }
