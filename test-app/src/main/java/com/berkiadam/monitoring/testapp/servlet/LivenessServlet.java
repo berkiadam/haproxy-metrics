@@ -1,4 +1,4 @@
-package com.otp.dsp.testapp.servlet;
+package com.berkiadam.monitoring.testapp.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

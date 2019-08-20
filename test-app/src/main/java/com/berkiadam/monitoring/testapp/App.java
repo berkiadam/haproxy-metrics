@@ -1,10 +1,10 @@
-package com.otp.dsp.testapp;
+package com.berkiadam.monitoring.testapp;
 
 
 
-import com.otp.dsp.testapp.service.TestAppService;
-import com.otp.dsp.testapp.servlet.LivenessServlet;
-import com.otp.dsp.testapp.servlet.ReadinessServlet;
+import com.berkiadam.monitoring.testapp.service.TestAppService;
+import com.berkiadam.monitoring.testapp.servlet.LivenessServlet;
+import com.berkiadam.monitoring.testapp.servlet.ReadinessServlet;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;

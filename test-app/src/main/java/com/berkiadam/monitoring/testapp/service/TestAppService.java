@@ -1,4 +1,4 @@
-package com.otp.dsp.testapp.service;
+package com.berkiadam.monitoring.testapp.service;
 
 
 import org.slf4j.Logger;
