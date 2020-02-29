@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while :
+do
+
+
+
+logger -n localhost -P 514 -T 'Feb 28 11:43:46 192.168.4.95 haproxy[3315]: 192.168.5.1:38232 [28/Feb/2020:11:43:45.791] fe_sni~ be_secure:dsp:gwbadapter-v3/pod:gwbadapter-v3.5-5-kt5j8:gwbadapter-v3-5:192.168.9.19:8080 0/0/8/251/259 200 224 - - ---- 168/84/0/1/0 0/0 "GET /api/v3/gwbadapter/deposit/7301600000268 HTTP/1.1"'
+
+
+done

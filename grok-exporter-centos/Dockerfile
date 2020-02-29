@@ -24,6 +24,9 @@ RUN  yum -y install rsyslog wget unzip && \
 RUN mkdir -p /etc/grok_exporter && ln -sf /etc/grok_exporter/config.yml /grok/
 
 COPY rsyslog.conf /etc/rsyslog.conf
+COPY log_rotation_script /grok/log_rotation_script
+
+RUN chmod 777 /grok/log_rotation_script
 
 EXPOSE 514/tcp 514/udp 9144/tcp
 WORKDIR /grok
